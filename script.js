@@ -1,87 +1,81 @@
-// =====================
-// Typing Animation
-// =====================
-var typed = new Typed("#wrd", {
-    strings: ["Python", "Django", "Flask", "Web Development"],
-    typeSpeed: 80,
-    backSpeed: 50,
-    backDelay: 1500,
+// Typing Effect
+var typed = new Typed('#wrd', {
+    strings: ['Python Program', 'Django', 'Flask', 'Java Program', 'Full-stack developer'],
+    typeSpeed: 100,
     loop: true
 });
 
-// =====================
-// Mobile Menu Toggle
-// =====================
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
+// Menubar
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
 
-hamburger.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
-    hamburger.classList.toggle("toggle");
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
 });
 
-// =====================
-// Skills Carousel
-// =====================
-const slides = document.querySelectorAll(".slides img");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
+// Popup window
+function openPopup() {
+    document.getElementById('popup').style.display = 'flex';
+}
+
+function closePopup() {
+    document.getElementById('popup').style.display = 'none';
+}
+
+function copyUPI() {
+    var upiId = document.getElementById('upi-id').textContent;
+    navigator.clipboard.writeText(upiId).then(function () {
+        alert('UPI ID copied to clipboard');
+    }, function () {
+        alert('Failed to copy UPI ID');
+    });
+}
+
+// Footer animation
+document.getElementById("currentYear").textContent = new Date().getFullYear();
+document.addEventListener('DOMContentLoaded', function () {
+    const footer = document.querySelector('.footer');
+    const footerOffsetTop = footer.offsetTop;
+    const footerHeight = footer.offsetHeight;
+
+    function checkFooterVisibility() {
+        const scrollPosition = window.scrollY + window.innerHeight;
+        if (scrollPosition > footerOffsetTop + footerHeight / 4) {
+            footer.classList.add('footer-animation');
+        }
+    }
+
+    window.addEventListener('scroll', checkFooterVisibility);
+    checkFooterVisibility();
+});
+
+// My Skill Carousel
+const slides = document.querySelector('.slides');
+const images = document.querySelectorAll('.slides img');
 
 let index = 0;
 
-// Show the first skill initially
-function showSlide(i) {
-    slides.forEach((slide, idx) => {
-        slide.style.display = (idx === i) ? "block" : "none";
-    });
+// Update slide position
+function updateSlidePosition() {
+    slides.style.transform = `translateX(-${index * 100}%)`;
 }
-showSlide(index);
 
 // Next button
-nextBtn.addEventListener("click", () => {
-    index = (index + 1) % slides.length;
-    showSlide(index);
+document.querySelector('.next').addEventListener('click', () => {
+    index = (index + 1) % images.length;
+    updateSlidePosition();
 });
 
-// Previous button
-prevBtn.addEventListener("click", () => {
-    index = (index - 1 + slides.length) % slides.length;
-    showSlide(index);
+// Prev button
+document.querySelector('.prev').addEventListener('click', () => {
+    index = (index - 1 + images.length) % images.length;
+    updateSlidePosition();
 });
 
-// =====================
-// Smooth Scroll Effect
-// =====================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth"
-        });
-    });
-});
-
-// =====================
-// Optional: Fade-in effect on scroll
-// =====================
-const faders = document.querySelectorAll(".fade-in");
-
-const appearOptions = {
-    threshold: 0.2,
-    rootMargin: "0px 0px -50px 0px"
-};
-
-const appearOnScroll = new IntersectionObserver(function (entries, observer) {
-    entries.forEach(entry => {
-        if (!entry.isIntersecting) {
-            return;
-        } else {
-            entry.target.classList.add("appear");
-            observer.unobserve(entry.target);
-        }
-    });
-}, appearOptions);
-
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-});
+// Auto slide
+function autoSlide() {
+    index = (index + 1) % images.length;
+    updateSlidePosition();
+}
+setInterval(autoSlide, 4000); // every 4 seconds
