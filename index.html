@@ -1,95 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Srikeerthan - Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Srikeerthan Portfolio</title>
+  <style>
+    /* ---------- GLOBAL ---------- */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;  /* dark theme */
+      color: #ffffff;
+      text-align: center;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    h1, h2, h3 {
+      margin: 10px 0;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      padding: 40px 20px;
+      background: #111111;
+      color: #fff;
+    }
+
+    header img {
+      max-width: 200px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    /* ---------- ABOUT ---------- */
+    #about {
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    /* ---------- SKILLS CAROUSEL ---------- */
+    .carousel-container {
+      position: relative;
+      width: 300px;
+      margin: 40px auto;
+      overflow: hidden;
+    }
+
+    .carousel {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .skill-card {
+      min-width: 100%;
+      text-align: center;
+    }
+
+    .skill-card img {
+      width: 100%;
+      max-height: 180px;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.2);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .carousel-btn:hover {
+      background: rgba(255,255,255,0.5);
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="Photos/keerthan.jpg" alt="Srikeerthan" />
-            <h1>Srikeerthan</h1>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#home"><b>Home</b></a></li>
-                <li><a href="#skill"><b>Skill</b></a></li>
-                <li><a href="#services"><b>Services</b></a></li>
-                <li><a href="#knowme"><b>Know Me</b></a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+  
+  <!-- HEADER -->
+  <header>
+    <img src="your-photo.jpg" alt="Profile Photo">
+    <h1>Srikeerthan</h1>
+    <p>Developer skilled in Python, Django, and Flask</p>
+  </header>
 
-    <!-- Home Section -->
-    <section id="home" class="home-section">
-        <div class="profile-image">
-            <img src="Photos/keerthan.jpg" alt="Srikeerthan">
-        </div>
-        <div class="intro">
-            <h2>Hey, I'm <span id="name">Srikeeerthan</span>, a developer skilled in<br>
-                <span id="wrd"></span>
-            </h2>
-            <p id="home-txt">
-                A student developer proficient in Python, Django, and Flask. Passionate about learning new skills and building impactful projects across both front-end and back-end development. I'm always ready for new challenges.
-            </p>        
-        </div>
-    </section>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>Hey, I'm Srikeerthan</h2>
+    <p>
+      A student proficient in Python, Django, and Flask. Passionate about learning new skills and building impactful projects across both frontend and backend web development. 
+      I thrive on solving challenges and creating innovative solutions.
+    </p>
+  </section>
 
-   <!-- Skills Section -->
-<section id="skill">
-  <hr style="border: 1px solid #ffffff; width: 70%; margin: 20px auto;">
-  <h2>My Skills</h2>
-  <div class="carousel-container">
-    <i class="fa-solid fa-angles-left prev"></i>
-    <div class="carousel">
-      <div class="carousel-track">
-        <div class="skill-card"><img src="icons/fsd-projects.jpg" alt="Full Stack"></div>
-        <div class="skill-card"><img src="icons/py-project.jpeg" alt="Python"></div>
-        <div class="skill-card"><img src="icons/java-project.png" alt="Java"></div>
-        <div class="skill-card"><img src="icons/django.jpg" alt="Django"></div>
-        <div class="skill-card"><img src="icons/flask.png" alt="Flask"></div>
-        <div class="skill-card"><img src="icons/pyev-projects.jpeg" alt="Events"></div>
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="carousel-container">
+      <div class="carousel">
+        <div class="carousel-track">
+          <div class="skill-card"><img src="python.png" alt="Python"></div>
+          <div class="skill-card"><img src="django.png" alt="Django"></div>
+          <div class="skill-card"><img src="flask.png" alt="Flask"></div>
+        </div>
       </div>
+      <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
     </div>
-    <i class="fa-solid fa-angles-right next"></i>
-  </div>
-</section>
+  </section>
 
+  <script>
+    // Carousel Functionality
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
 
-    <!-- Know Me Section -->
-    <section id="knowme" class="knowme-section">
-        <hr style="border: 1px solid #ffffff; width: 70%; margin: 20px auto;">
-        <h2><b>Know Me</b></h2>
-        <div class="knowme-grid">
-            <div class="know-card">
-                <h3><b>My State and City ?</b></h3><br>
-                <p>I'm from Tamil Nadu, Chidambaram.</p>
-            </div>
-            <div class="know-card">
-                <h3><b>My Education ?</b></h3><br>
-                <p>I'm pursuing my education with a focus on technology and programming, laying a strong foundation for my career. My academic journey has equipped me with essential skills in full stack development, driving my passion for coding and innovation.</p>
-            </div>
-            <div class="know-card">
-                <h3><b>My Dream ?</b></h3><br>
-                <p>My dream is to revolutionize the tech industry by leveraging artificial intelligence and cutting-edge technologies. I aspire to create impactful solutions that enhance everyday life and contribute to the advancement of digital innovation.</p>
-            </div>
-            <div class="know-card">
-                <h3><b>What I'M Doing Now ?</b></h3><br>
-                <p>I’m learning new skills and challenging myself with tough problems on coding.</p>
-            </div>
-        </div>
-    </section>
+    let currentIndex = 0;
 
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script src="script.js"></script>
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % slides.length;
+      updateCarousel();
+    });
+
+    prevButton.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+  </script>
+
 </body>
 </html>
