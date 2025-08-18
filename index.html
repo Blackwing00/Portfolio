@@ -1,66 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Developer Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Typed.js CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srikeerthan - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <img src="Photos/keerthan.jpg" alt="Srikeerthan" />
+            <h1>Srikeerthan</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home"><b>Home</b></a></li>
+                <li><a href="#skill"><b>Skill</b></a></li>
+                <li><a href="#services"><b>Services</b></a></li>
+                <li><a href="#knowme"><b>Know Me</b></a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
-  <!-- Header / Navbar -->
-  <header>
-    <nav>
-      <div class="hamburger">☰</div>
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="profile-image">
+            <img src="Photos/keerthan.jpg" alt="Srikeerthan">
+        </div>
+        <div class="intro">
+            <h2>Hey, I'm <span id="name">Srikeeerthan</span>, a developer skilled in<br>
+                <span id="wrd"></span>
+            </h2>
+            <p id="home-txt">
+                A student developer proficient in Python, Django, and Flask. Passionate about learning new skills and building impactful projects across both front-end and back-end development. I'm always ready for new challenges.
+            </p>        
+        </div>
+    </section>
 
-  <!-- Hero Section -->
-  <section id="home" class="hero">
-    <h1>Hello, I'm a <span id="wrd"></span></h1>
-    <button onclick="openPopup()">Donate</button>
-  </section>
+    <!-- Skills Section -->
+    <section id="skill">
+        <hr style="border: 1px solid #ffffff; width: 70%; margin: 20px auto;">
+        <h2>My Skills</h2>
+        <div class="slider">
+            <div class="slides">
+                <img src="icons/fsd-projects.jpg" alt="#">
+                <img src="icons/py-project.jpeg" alt="#">
+                <img src="icons/java-project.png" alt="#">
+                <img src="icons/django.jpg" alt="#">
+                <img src="icons/flask.png" alt="#">
+                <img src="icons/pyev-projects.jpeg" alt="#">
+                <img src="icons/full stack.jpg" alt="#">
+            </div>
+            <i class="fa-duotone fa-solid fa-angles-left prev btn2"></i>
+            <i class="fa-duotone fa-solid fa-angles-right next btn2"></i>
+        </div>
+    </section>
 
-  <!-- Popup -->
-  <div id="popup" class="popup">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup()">&times;</span>
-      <h2>Support Me 💖</h2>
-      <p>UPI ID: <span id="upi-id">yourupi@bank</span></p>
-      <button onclick="copyUPI()">Copy UPI</button>
-    </div>
-  </div>
+    <!-- Know Me Section -->
+    <section id="knowme" class="knowme-section">
+        <hr style="border: 1px solid #ffffff; width: 70%; margin: 20px auto;">
+        <h2><b>Know Me</b></h2>
+        <div class="knowme-grid">
+            <div class="know-card">
+                <h3><b>My State and City ?</b></h3><br>
+                <p>I'm from Tamil Nadu, Chidambaram.</p>
+            </div>
+            <div class="know-card">
+                <h3><b>My Education ?</b></h3><br>
+                <p>I'm pursuing my education with a focus on technology and programming, laying a strong foundation for my career. My academic journey has equipped me with essential skills in full stack development, driving my passion for coding and innovation.</p>
+            </div>
+            <div class="know-card">
+                <h3><b>My Dream ?</b></h3><br>
+                <p>My dream is to revolutionize the tech industry by leveraging artificial intelligence and cutting-edge technologies. I aspire to create impactful solutions that enhance everyday life and contribute to the advancement of digital innovation.</p>
+            </div>
+            <div class="know-card">
+                <h3><b>What I'M Doing Now ?</b></h3><br>
+                <p>I’m learning new skills and challenging myself with tough problems on coding.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Skills / Slider -->
-  <section id="skills" class="skills">
-    <h2>My Skills</h2>
-    <div class="slider">
-      <button class="prev">◀</button>
-      <div class="slides">
-        <img src="https://via.placeholder.com/400x200/ff7f7f/fff?text=Python" alt="Python">
-        <img src="https://via.placeholder.com/400x200/7fbfff/fff?text=Django" alt="Django">
-        <img src="https://via.placeholder.com/400x200/7fff7f/fff?text=Flask" alt="Flask">
-        <img src="https://via.placeholder.com/400x200/ffbf7f/fff?text=Java" alt="Java">
-        <img src="https://via.placeholder.com/400x200/ff7fff/fff?text=Fullstack" alt="Fullstack">
-      </div>
-      <button class="next">▶</button>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>&copy; <span id="currentYear"></span> My Portfolio. All rights reserved.</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="script.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
