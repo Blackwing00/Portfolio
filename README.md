@@ -22,7 +22,7 @@ This repo contains my projects, assets, and experiments
 
 🛠️ Skills
 
-Languages: Python, JavaScript, C++ 
+Languages: Python, JavaScript
 
 Tools: Git, GitHub, VS Code
 
