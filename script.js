@@ -1,81 +1,83 @@
 // Typing Effect
 var typed = new Typed('#wrd', {
-    strings: ['Python Program', 'Django', 'Flask', 'Java Program', 'Full-stack developer'],
-    typeSpeed: 100,
-    loop: true
+  strings: ['Python Developer', 'Django', 'Flask', 'Java Developer', 'Full-stack Engineer'],
+  typeSpeed: 100,
+  loop: true
 });
 
-// Menubar
+// Navbar Hamburger Menu
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
-
 hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
 });
 
-// Popup window
+// Popup Functions
 function openPopup() {
-    document.getElementById('popup').style.display = 'flex';
+  document.getElementById('popup').style.display = 'flex';
 }
-
 function closePopup() {
-    document.getElementById('popup').style.display = 'none';
+  document.getElementById('popup').style.display = 'none';
 }
-
 function copyUPI() {
-    var upiId = document.getElementById('upi-id').textContent;
-    navigator.clipboard.writeText(upiId).then(function () {
-        alert('UPI ID copied to clipboard');
-    }, function () {
-        alert('Failed to copy UPI ID');
-    });
+  const upiId = document.getElementById('upi-id').textContent;
+  navigator.clipboard.writeText(upiId).then(() => {
+    alert('UPI ID copied to clipboard');
+  }).catch(() => {
+    alert('Failed to copy UPI ID');
+  });
 }
 
-// Footer animation
+// Footer: dynamic year + animation
 document.getElementById("currentYear").textContent = new Date().getFullYear();
 document.addEventListener('DOMContentLoaded', function () {
-    const footer = document.querySelector('.footer');
-    const footerOffsetTop = footer.offsetTop;
-    const footerHeight = footer.offsetHeight;
-
-    function checkFooterVisibility() {
-        const scrollPosition = window.scrollY + window.innerHeight;
-        if (scrollPosition > footerOffsetTop + footerHeight / 4) {
-            footer.classList.add('footer-animation');
-        }
+  const footer = document.querySelector('.footer');
+  const footerOffsetTop = footer.offsetTop;
+  const footerHeight = footer.offsetHeight;
+  function checkFooterVisibility() {
+    const scrollPosition = window.scrollY + window.innerHeight;
+    if (scrollPosition > footerOffsetTop + footerHeight / 4) {
+      footer.classList.add('footer-animation');
     }
-
-    window.addEventListener('scroll', checkFooterVisibility);
-    checkFooterVisibility();
+  }
+  window.addEventListener('scroll', checkFooterVisibility);
+  checkFooterVisibility();
 });
 
-// My Skill Carousel
+// Image Slider
 const slides = document.querySelector('.slides');
 const images = document.querySelectorAll('.slides img');
-
 let index = 0;
+const slideInterval = 2000;
 
-// Update slide position
 function updateSlidePosition() {
-    slides.style.transform = `translateX(-${index * 100}%)`;
+  slides.style.transform = `translateX(-${index * 100}%)`;
 }
 
-// Next button
-document.querySelector('.next').addEventListener('click', () => {
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+
+if (nextBtn && prevBtn) {
+  nextBtn.addEventListener('click', () => {
     index = (index + 1) % images.length;
     updateSlidePosition();
-});
-
-// Prev button
-document.querySelector('.prev').addEventListener('click', () => {
+  });
+  prevBtn.addEventListener('click', () => {
     index = (index - 1 + images.length) % images.length;
     updateSlidePosition();
-});
-
-// Auto slide
-function autoSlide() {
-    index = (index + 1) % images.length;
-    updateSlidePosition();
+  });
 }
-setInterval(autoSlide, 4000); // every 4 seconds
+
+// Auto Slide
+let autoSlideInterval = setInterval(autoSlide, slideInterval);
+function autoSlide() {
+  index = (index + 1) % images.length;
+  updateSlidePosition();
+}
+
+// Optional pause on hover
+slides.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+slides.addEventListener('mouseleave', () => {
+  autoSlideInterval = setInterval(autoSlide, slideInterval);
+});
