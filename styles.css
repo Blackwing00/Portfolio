@@ -7,31 +7,40 @@
 
 body {
     font-family: 'Electrolize', sans-serif;
-    background: #000;
+    background: #111;
     color: #fff;
     line-height: 1.6;
 }
 
-/* Navbar */
-.navbar {
+/* Header */
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
-    background: rgba(0, 0, 0, 0.8);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+    padding: 20px 50px;
+    background: #222;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Navigation */
 .nav-links {
     list-style: none;
     display: flex;
 }
 
 .nav-links li {
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 .nav-links a {
@@ -41,176 +50,54 @@ body {
 }
 
 .nav-links a:hover {
-    color: #0ff;
-    text-shadow: 0 0 10px #0ff;
+    color: cyan;
 }
 
-/* Hamburger menu */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger span {
-    height: 3px;
-    width: 25px;
-    background: #fff;
-    margin: 4px;
-    transition: 0.3s;
-}
-
-/* Typing effect */
-#wrd {
-    color: #0ff;
-    font-weight: bold;
-    text-shadow: 0 0 15px #0ff;
-}
-
-/* Hero Section */
-.hero {
-    height: 100vh;
+/* Home Section */
+.home-section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 50px;
+    min-height: 100vh;
+    padding: 50px 20px;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #0ff;
-    text-shadow: 0 0 20px #0ff;
-}
-
-.hero p {
-    font-size: 1.2rem;
-}
-
-/* Skills Section */
-.skills {
-    margin: 100px auto;
-    text-align: center;
-    max-width: 700px;
-    position: relative;
-}
-
-.skills h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    text-shadow: 0 0 15px #0ff;
-}
-
-/* Carousel container */
-.carousel {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 400px;
-    margin: auto;
-    border: 2px solid #0ff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px #0ff;
-}
-
-/* Slides wrapper */
-.slides {
-    display: flex;
-    transition: transform 0.6s ease-in-out;
-}
-
-/* Each skill */
-.slides img {
-    width: 100%;
-    flex-shrink: 0;
-    border-radius: 10px;
-}
-
-/* Navigation arrows */
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    color: #0ff;
-    background: rgba(0, 0, 0, 0.6);
-    padding: 10px 15px;
+.profile-image img {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    cursor: pointer;
-    transition: 0.3s;
-    user-select: none;
+    border: 4px solid #fff;
+    object-fit: cover;
+    box-shadow: 0 0 20px cyan;
+    margin-bottom: 20px;
 }
 
-.prev:hover, .next:hover {
-    background: #0ff;
-    color: #000;
-    box-shadow: 0 0 20px #0ff;
+/* Intro Text */
+.intro h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
 }
 
-.prev {
-    left: 10px;
+.intro p {
+    max-width: 600px;
+    margin: auto;
+    font-size: 16px;
+    opacity: 0.9;
 }
 
-.next {
-    right: 10px;
+/* Know Me Section */
+.knowme-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 30px;
 }
 
-/* Popup */
-#popup {
-    display: none;
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-}
-
-#popup .content {
-    background: #111;
+.know-card {
+    background: #222;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 20px #0ff;
-    text-align: center;
-}
-
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 20px;
-    background: #111;
-    margin-top: 100px;
-    position: relative;
-    color: #aaa;
-    font-size: 0.9rem;
-}
-
-.footer-animation {
-    color: #0ff;
-    text-shadow: 0 0 15px #0ff;
-    transition: 0.6s ease-in-out;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        top: 60px;
-        right: -100%;
-        background: #000;
-        flex-direction: column;
-        width: 200px;
-        transition: 0.3s;
-    }
-
-    .nav-links.active {
-        right: 0;
-    }
-
-    .hamburger {
-        display: flex;
-    }
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
