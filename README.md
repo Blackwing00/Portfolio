@@ -16,7 +16,7 @@ This repo contains my projects, assets, and experiments
 
 | Project                 | Description                          | Tech Stack     |
 | ----------------------- | ------------------------------------ | -------------- |
-| Tic-Tac-Toe             | TicTacToe with win/draw detection    |Python (Tkinter)|
+| Tic-Tac-Toe             |Classic 3×3 TicTacToe with win/draw detection|Python (Tkinter)|
 | Minesweeper 🎮          | A Python-based minesweeper game      | Python, Pygame |
 | Portfolio Website 🌐    | My personal developer portfolio site | HTML, CSS, JS  |
 
