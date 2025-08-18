@@ -4,7 +4,7 @@ Welcome to my portfolio repository! This is a collection of my projects, experim
 
 About Me
 
-I’m currently learning Python / Web Development / [Your Focus Area]
+I’m currently learning Python / Web Development / Django & Flask
 
 Interested in Open Source, Problem Solving, and Building Real-World Apps
 
