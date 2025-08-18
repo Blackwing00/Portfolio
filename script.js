@@ -4,21 +4,18 @@ const next = document.querySelector(".next");
 const cards = document.querySelectorAll(".skill-card");
 
 let index = 0;
-
-function updateCarousel() {
-  track.style.transform = `translateX(${-index * 100}%)`;
-}
+const cardWidth = cards[0].offsetWidth + 20; // width + margin
 
 next.addEventListener("click", () => {
-  if (index < cards.length - 1) {
+  if (index < cards.length - 3) { // show 3 at a time
     index++;
-    updateCarousel();
+    track.style.transform = `translateX(${-index * cardWidth}px)`;
   }
 });
 
 prev.addEventListener("click", () => {
   if (index > 0) {
     index--;
-    updateCarousel();
+    track.style.transform = `translateX(${-index * cardWidth}px)`;
   }
 });
