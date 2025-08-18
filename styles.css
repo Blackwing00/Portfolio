@@ -1,103 +1,57 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Skills Carousel */
+.carousel-container {
+  position: relative;
+  width: 300px; /* fixed size for single skill */
+  margin: 30px auto;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-body {
-    font-family: 'Electrolize', sans-serif;
-    background: #111;
-    color: #fff;
-    line-height: 1.6;
+.carousel {
+  overflow: hidden;
+  width: 100%;
 }
 
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background: #222;
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
+.skill-card {
+  min-width: 100%;
+  text-align: center;
 }
 
-.logo img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 10px;
+.skill-card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* Navigation */
-.nav-links {
-    list-style: none;
-    display: flex;
+/* arrows */
+.prev, .next {
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  transition: 0.3s;
+  user-select: none;
 }
 
-.nav-links li {
-    margin: 0 15px;
+.prev:hover, .next:hover {
+  color: #00aced;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: #fff;
-    transition: 0.3s;
+.prev {
+  position: absolute;
+  left: -40px;
 }
 
-.nav-links a:hover {
-    color: cyan;
-}
-
-/* Home Section */
-.home-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 100vh;
-    padding: 50px 20px;
-}
-
-.profile-image img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    object-fit: cover;
-    box-shadow: 0 0 20px cyan;
-    margin-bottom: 20px;
-}
-
-/* Intro Text */
-.intro h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.intro p {
-    max-width: 600px;
-    margin: auto;
-    font-size: 16px;
-    opacity: 0.9;
-}
-
-/* Know Me Section */
-.knowme-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 30px;
-}
-
-.know-card {
-    background: #222;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+.next {
+  position: absolute;
+  right: -40px;
 }
