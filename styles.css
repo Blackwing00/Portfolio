@@ -1,12 +1,11 @@
 /* Skills Carousel */
 .carousel-container {
   position: relative;
-  width: 300px; /* fixed size for single skill */
+  width: 80%;
   margin: 30px auto;
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .carousel {
@@ -20,14 +19,12 @@
 }
 
 .skill-card {
-  min-width: 100%;
-  text-align: center;
+  min-width: 200px;
+  margin: 0 10px;
 }
 
 .skill-card img {
   width: 100%;
-  max-height: 200px;
-  object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
@@ -38,8 +35,8 @@
   color: #fff;
   cursor: pointer;
   padding: 10px;
+  z-index: 10;
   transition: 0.3s;
-  user-select: none;
 }
 
 .prev:hover, .next:hover {
@@ -48,10 +45,10 @@
 
 .prev {
   position: absolute;
-  left: -40px;
+  left: 10px;
 }
 
 .next {
   position: absolute;
-  right: -40px;
+  right: 10px;
 }
