@@ -1,6 +1,6 @@
 // Typing Effect
 var typed = new Typed('#wrd', {
-    strings: ['Python Program','C Program', 'C++ Program', 'Java Program', 'Full-stack developer', 'django & flask'],
+    strings: ['Python Program', 'django', 'flask', 'Java Program', 'Full-stack developer'],
     typeSpeed: 100,
     loop: true
 });
@@ -22,16 +22,6 @@ function openPopup() {
 function closePopup() {
     document.getElementById('popup').style.display = 'none';
 }
-
-function copyUPI() {
-    var upiId = document.getElementById('upi-id').textContent;
-    navigator.clipboard.writeText(upiId).then(function() {
-        alert('UPI ID copied to clipboard');
-    }, function() {
-        alert('Failed to copy UPI ID');
-    });
-}
-
 // footer 
 document.getElementById("currentYear").textContent = new Date().getFullYear();
 document.addEventListener('DOMContentLoaded', function () {
