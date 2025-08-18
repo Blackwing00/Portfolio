@@ -1,69 +1,24 @@
-// Typing Effect
-var typed = new Typed('#wrd', {
-    strings: ['Python Program', 'django', 'flask', 'Java Program', 'Full-stack developer'],
-    typeSpeed: 100,
-    loop: true
-});
-
-// menubar
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-});
-
-// popup window
-function openPopup() {
-    document.getElementById('popup').style.display = 'flex';
-}
-
-function closePopup() {
-    document.getElementById('popup').style.display = 'none';
-}
-// footer 
-document.getElementById("currentYear").textContent = new Date().getFullYear();
-document.addEventListener('DOMContentLoaded', function () {
-    const footer = document.querySelector('.footer');
-    const footerOffsetTop = footer.offsetTop;
-    const footerHeight = footer.offsetHeight;
-
-    function checkFooterVisibility() {
-        const scrollPosition = window.scrollY + window.innerHeight;
-        if (scrollPosition > footerOffsetTop + footerHeight / 4) {
-            footer.classList.add('footer-animation');
-        }
-    }
-
-    window.addEventListener('scroll', checkFooterVisibility);
-    checkFooterVisibility();
-});
-
-// my skill 
-const slides = document.querySelector('.slides');
-const images = document.querySelectorAll('.slides img');
+const track = document.querySelector(".carousel-track");
+const prev = document.querySelector(".prev");
+const next = document.querySelector(".next");
+const cards = document.querySelectorAll(".skill-card");
 
 let index = 0;
-const slideInterval = 2000;
 
-function updateSlidePosition() {
-    slides.style.transform = `translateX(-${index * 100}%)`;
+function updateCarousel() {
+  track.style.transform = `translateX(${-index * 100}%)`;
 }
 
-document.querySelector('.next').addEventListener('click', () => {
-    index = (index + 1) % images.length;
-    updateSlidePosition();
+next.addEventListener("click", () => {
+  if (index < cards.length - 1) {
+    index++;
+    updateCarousel();
+  }
 });
 
-document.querySelector('.prev').addEventListener('click', () => {
-    index = (index - 1 + images.length) % images.length;
-    updateSlidePosition();
+prev.addEventListener("click", () => {
+  if (index > 0) {
+    index--;
+    updateCarousel();
+  }
 });
-
-function autoSlide() {
-    index = (index + 1) % images.length;
-    updateSlidePosition();
-}
-
-setInterval(autoSlide, slideInterval);
