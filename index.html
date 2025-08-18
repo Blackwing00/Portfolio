@@ -1,87 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Srikeerthan - Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srikeerthan - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <img src="Photos/keerthan.jpg" alt="Srikeerthan" />
-      <h1>Srikeerthan</h1>
-    </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#home"><b>Home</b></a></li>
-        <li><a href="#skill"><b>Skill</b></a></li>
-        <li><a href="#services"><b>Services</b></a></li>
-        <li><a href="#knowme"><b>Know Me</b></a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <div class="logo">
+            <img src="Photos/keerthan.jpg" alt="Srikeerthan" />
+            <h1>Srikeerthan</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home"><b>Home</b></a></li>
+                <li><a href="#skill"><b>Skill</b></a></li>
+                <li><a href="#services"><b>Services</b></a></li>
+                <li><a href="#knowme"><b>Know Me</b></a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
-  <!-- Home Section -->
-  <section id="home" class="home-section">
-    <div class="profile-image">
-      <img src="Photos/keerthan.jpg" alt="Srikeerthan">
-    </div>
-    <div class="intro">
-      <h2>Hey, I'm <span id="name">Srikeeerthan</span>, a developer skilled in<br>
-        <span id="wrd"></span>
-      </h2>
-      <p id="home-txt">
-        A student developer proficient in Python, Django, and Flask. Passionate about learning new skills and building impactful projects across both front-end and back-end development. I'm always ready for new challenges.
-      </p>
-    </div>
-  </section>
+    <!-- Home Section -->
+    <section id="home" class="home-section">
+        <div class="profile-image">
+            <img src="Photos/keerthan.jpg" alt="Srikeerthan">
+        </div>
+        <div class="intro">
+            <h2>Hey, I'm <span id="name">Srikeeerthan</span>, a developer skilled in<br>
+                <span id="wrd"></span>
+            </h2>
+            <p id="home-txt">
+                A student developer proficient in Python, Django, and Flask. Passionate about learning new skills and building impactful projects across both front-end and back-end development. I'm always ready for new challenges.
+            </p>        
+        </div>
+    </section>
 
-  <!-- Skills Section -->
-  <section id="skill">
-    <hr style="border: 1px solid #ffffff; width: 70%; margin: 20px auto;">
-    <h2>My Skills</h2>
-    <div class="slider">
-      <div class="slides">
-        <img src="icons/fsd-projects.jpg" alt="Full Stack">
-        <img src="icons/py-project.jpeg" alt="Python">
-        <img src="icons/java-project.png" alt="Java">
-        <img src="icons/django.jpg" alt="Django">
-        <img src="icons/flask.png" alt="Flask">
-        <img src="icons/pyev-projects.jpeg" alt="Python Events">
-        <img src="icons/full stack.jpg" alt="Full Stack">
-      </div>
-      <i class="fa-solid fa-angles-left prev btn2"></i>
-      <i class="fa-solid fa-angles-right next btn2"></i>
-    </div>
-  </section>
+    <!-- Skills Section -->
+    <section id="skill">
+        <hr style="border: 1px solid #ffffff; width: 70%; margin: 20px auto;">
+        <h2>My Skills</h2>
+        <div class="slider">
+            <div class="slides">
+                <img src="icons/fsd-projects.jpg" alt="#">
+                <img src="icons/py-project.jpeg" alt="#">
+                <img src="icons/java-project.png" alt="#">
+                <img src="icons/django.jpg" alt="#">
+                <img src="icons/flask.png" alt="#">
+                <img src="icons/pyev-projects.jpeg" alt="#">
+                <img src="icons/full stack.jpg" alt="#">
+            </div>
+            <i class="fa-duotone fa-solid fa-angles-left prev btn2"></i>
+            <i class="fa-duotone fa-solid fa-angles-right next btn2"></i>
+        </div>
+    </section>
 
-  <!-- Know Me Section -->
-  <section id="knowme" class="knowme-section">
-    <hr style="border: 1px solid #ffffff; width: 70%; margin: 20px auto;">
-    <h2><b>Know Me</b></h2>
-    <div class="knowme-grid">
-      <div class="know-card">
-        <h3><b>My State and City ?</b></h3><br>
-        <p>I'm from Tamil Nadu, Chidambaram.</p>
-      </div>
-      <div class="know-card">
-        <h3><b>My Education ?</b></h3><br>
-        <p>I'm pursuing my education with a focus on technology and programming, laying a strong foundation for my career.</p>
-      </div>
-      <div class="know-card">
-        <h3><b>My Dream ?</b></h3><br>
-        <p>My dream is to revolutionize the tech industry by leveraging artificial intelligence and cutting-edge technologies.</p>
-      </div>
-      <div class="know-card">
-        <h3><b>What I'M Doing Now ?</b></h3><br>
-        <p>I’m learning new skills and challenging myself with tough problems on coding.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Know Me Section -->
+    <section id="knowme" class="knowme-section">
+        <hr style="border: 1px solid #ffffff; width: 70%; margin: 20px auto;">
+        <h2><b>Know Me</b></h2>
+        <div class="knowme-grid">
+            <div class="know-card">
+                <h3><b>My State and City ?</b></h3><br>
+                <p>I'm from Tamil Nadu, Chidambaram.</p>
+            </div>
+            <div class="know-card">
+                <h3><b>My Education ?</b></h3><br>
+                <p>I'm pursuing my education with a focus on technology and programming, laying a strong foundation for my career. My academic journey has equipped me with essential skills in full stack development, driving my passion for coding and innovation.</p>
+            </div>
+            <div class="know-card">
+                <h3><b>My Dream ?</b></h3><br>
+                <p>My dream is to revolutionize the tech industry by leveraging artificial intelligence and cutting-edge technologies. I aspire to create impactful solutions that enhance everyday life and contribute to the advancement of digital innovation.</p>
+            </div>
+            <div class="know-card">
+                <h3><b>What I'M Doing Now ?</b></h3><br>
+                <p>I’m learning new skills and challenging myself with tough problems on coding.</p>
+            </div>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
