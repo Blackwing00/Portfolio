@@ -34,6 +34,6 @@ Concepts: Data Structures, Algorithms, OOP, Web Dev
 
 LinkedIn: www.linkedin.com/in/srikeerthanb
 
-GitHub: cloudhead777
+GitHub: Blackwing00
 
 Email: keerthan.rez@email.com
